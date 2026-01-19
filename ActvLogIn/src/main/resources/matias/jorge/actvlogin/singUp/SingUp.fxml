@@ -36,15 +36,15 @@
             <VBox maxHeight="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                <children>
                   <Label text="Contraseña" />
-                  <TextField />
-                  <PasswordField />
+                  <TextField fx:id="singUpTfPassword" />
+                  <PasswordField fx:id="singUpPassworField" />
                </children>
             </VBox>
             <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                <children>
                   <Label text="Confirmar contraseña" />
-                  <TextField fx:id="tfConfPassword" />
-                  <PasswordField />
+                  <TextField fx:id="singUpTfVerfPassword" />
+                  <PasswordField fx:id="singUpVerfPassword" />
                </children>
             </VBox>
          </children>

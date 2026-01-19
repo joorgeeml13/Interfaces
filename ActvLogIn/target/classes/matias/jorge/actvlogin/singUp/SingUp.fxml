@@ -36,20 +36,22 @@
             <VBox maxHeight="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                <children>
                   <Label text="Contraseña" />
-                  <PasswordField />
+                  <TextField fx:id="singUpTfPassword" />
+                  <PasswordField fx:id="singUpPassworfField" />
                </children>
             </VBox>
             <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                <children>
                   <Label text="Confirmar contraseña" />
-                  <PasswordField />
+                  <TextField fx:id="singUpTfVerfPassword" />
+                  <PasswordField fx:id="singUpVerfPassword" />
                </children>
             </VBox>
          </children>
       </HBox>
       <HBox>
          <children>
-            <CheckBox alignment="TOP_CENTER" mnemonicParsing="false" text="Mostrar contraseña" />
+            <CheckBox alignment="TOP_CENTER" mnemonicParsing="false" text="Ver contraseña" />
          </children>
       </HBox>
       <VBox>

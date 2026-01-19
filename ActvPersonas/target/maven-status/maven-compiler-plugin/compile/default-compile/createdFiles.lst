@@ -1,0 +1,4 @@
+module-info.class
+matias\jorge\actvpersonas\models\Persona.class
+matias\jorge\actvpersonas\controllers\PrimaryController.class
+matias\jorge\actvpersonas\App.class

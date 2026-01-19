@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="matias.jorge.actvlogin.controllers.MainController">
+   <children>
+      <VBox maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" style="-fx-background-color: #525252;">
+         <children>
+            <Label alignment="CENTER" style="-fx-font-weight: bold;" text="Bienvenido al aula virtual" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="¿Estas registrado?" textFill="WHITE">
+               <font>
+                  <Font name="Ebrima" size="19.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" prefWidth="300.0" spacing="10.0">
+               <children>
+                  <Button fx:id="buttonToLogIn" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#cargarLogIn" style="-fx-background-color: transparent; -fx-border-radius: 4; -fx-border-color: white;" text="Log In" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="buttonToSingUp" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#cargarRegister" prefWidth="75.0" style="-fx-background-color: transparent; -fx-border-radius: 4; -fx-border-color: white; -fx-text-fill: bold;" text="Sing Up" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="100.0" top="100.0" />
+         </padding>
+      </VBox>
+      <StackPane fx:id="formPane" prefHeight="150.0">
+         <padding>
+            <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+         </padding></StackPane>
+   </children>
+</HBox>

@@ -37,7 +37,7 @@
                <children>
                   <Label text="Contraseña" />
                   <TextField fx:id="singUpTfPassword" />
-                  <PasswordField fx:id="singUpPassworfField" />
+                  <PasswordField fx:id="singUpPassworField" />
                </children>
             </VBox>
             <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">

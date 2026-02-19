@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jorgematias.controller.DashboardController" prefWidth="1050" prefHeight="700">
+    
+    <top>
+        <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-background-color: #2c3e50; -fx-padding: 15;">
+            <Label fx:id="lblWelcome" text="Hola, Usuario" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;"/>
+            <Label fx:id="lblRol" text="[ROL]" style="-fx-text-fill: #3498db; -fx-font-weight: bold;"/>
+            <Button text="Cerrar Sesión" onAction="#handleLogout" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-cursor: hand;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            
+            <Tab text="Catálogo de Libros">
+                <SplitPane dividerPositions="0.7">
+                    <VBox spacing="10" style="-fx-padding: 15;">
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <TextField fx:id="searchLibro" promptText="Buscar por título..." HBox.hgrow="ALWAYS"/>
+                            <ComboBox fx:id="comboGenero" promptText="Género"/>
+                            <CheckBox fx:id="checkDisponibles" text="Solo disponibles" />
+                        </HBox>
+                        <TableView fx:id="tableLibros" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="colIsbn" text="ISBN" prefWidth="100"/>
+                                <TableColumn fx:id="colTitulo" text="Título" prefWidth="250"/>
+                                <TableColumn fx:id="colAutor" text="Autor" prefWidth="150"/>
+                                <TableColumn fx:id="colGenero" text="Género" prefWidth="100"/>
+                                <TableColumn fx:id="colDisp" text="Disp." prefWidth="50"/>
+                            </columns>
+                        </TableView>
+                    </VBox>
+
+                    <VBox spacing="15" style="-fx-padding: 15; -fx-background-color: #ecf0f1;">
+                        <Label text="Detalles del Libro" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                        <ImageView fx:id="imgPortada" fitHeight="200" fitWidth="150" preserveRatio="true"/>
+                        <Label fx:id="lblDetalleTitulo" wrapText="true" style="-fx-font-weight: bold;"/>
+                        
+                        <Separator/>
+
+                        <VBox fx:id="boxAccionesEstudiante" spacing="10">
+                            <Button fx:id="btnPrestar" text="Pedir Prestado / Reservar" onAction="#handleAccionEstudiante" maxWidth="Infinity" style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+                        </VBox>
+
+                        <VBox fx:id="boxAccionesAdmin" spacing="10">
+                            <Button text="Añadir Nuevo Libro" onAction="#handleAñadirLibro" maxWidth="Infinity" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                            <Button fx:id="btnEditarLibro" text="Editar Libro Seleccionado" onAction="#handleEditarLibro" maxWidth="Infinity" style="-fx-background-color: #f39c12; -fx-text-fill: white;"/>
+                            <Button text="Eliminar Libro" onAction="#handleEliminarLibro" maxWidth="Infinity" style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+                        </VBox>
+                    </VBox>
+                </SplitPane>
+            </Tab>
+
+            <Tab fx:id="tabPrestamos" text="Préstamos y Reservas">
+                <VBox spacing="10" style="-fx-padding: 15;">
+                    <Label fx:id="lblTituloPrestamos" text="Historial de Préstamos" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <TableView fx:id="tablePrestamos" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colPrestamoId" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="colPrestamoLibro" text="Libro Prestado" prefWidth="300"/>
+                            <TableColumn fx:id="colPrestamoFin" text="Fecha Fin" prefWidth="120"/>
+                            <TableColumn fx:id="colPrestamoDevuelto" text="¿Devuelto?" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                    
+                    <HBox fx:id="boxBotonesPrestamoEstudiante" spacing="10">
+                        <Button text="Devolver Libro" onAction="#handleDevolver" style="-fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+                        <Button text="Prorrogar Préstamo" onAction="#handleProrrogar" style="-fx-background-color: #f1c40f;"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+
+        </TabPane>
+    </center>
+</BorderPane>

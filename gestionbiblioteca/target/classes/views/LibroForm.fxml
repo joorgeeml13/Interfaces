@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox spacing="15" alignment="CENTER" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jorgematias.controller.LibroFormController" prefWidth="500" prefHeight="650">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label fx:id="lblTituloForm" text="Añadir Nuevo Libro" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+    
+    <GridPane hgap="10" vgap="15" alignment="CENTER">
+        <Label text="ISBN:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="txtIsbn" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="250"/>
+        
+        <Label text="Título:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="txtTitulo" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="250"/>
+        
+        <Label text="Autor:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="txtAutor" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="250"/>
+        
+        <Label text="Género:" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="comboGenero" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="250"/>
+        
+        <Label text="Fecha Pub:" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <DatePicker fx:id="dpFecha" GridPane.rowIndex="4" GridPane.columnIndex="1" prefWidth="250"/>
+        
+        <Label text="Ejemplares:" GridPane.rowIndex="5" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <Spinner fx:id="spinEjemplares" GridPane.rowIndex="5" GridPane.columnIndex="1" prefWidth="250"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
+        <Button text="Elegir Portada" onAction="#handleSeleccionarPortada" style="-fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+        <Label fx:id="lblRutaImagen" text="Sin imagen" textFill="GRAY"/>
+    </HBox>
+    <ImageView fx:id="imgPreview" fitHeight="180" fitWidth="130" preserveRatio="true"/>
+
+    <HBox spacing="20" alignment="CENTER" style="-fx-padding: 15;">
+        <Button text="Guardar Libro" onAction="#handleGuardar" prefWidth="120" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button text="Cancelar" onAction="#handleCancelar" prefWidth="120" style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>
